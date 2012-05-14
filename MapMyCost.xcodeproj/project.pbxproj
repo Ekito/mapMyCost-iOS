@@ -1,0 +1,337 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9B093B3B1561630C00DEB945 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B093B3A1561630C00DEB945 /* UIKit.framework */; };
+		9B093B3D1561630C00DEB945 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B093B3C1561630C00DEB945 /* Foundation.framework */; };
+		9B093B3F1561630C00DEB945 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B093B3E1561630C00DEB945 /* CoreGraphics.framework */; };
+		9B093B451561630C00DEB945 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9B093B431561630C00DEB945 /* InfoPlist.strings */; };
+		9B093B471561630C00DEB945 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B093B461561630C00DEB945 /* main.m */; };
+		9B093B5E1561635500DEB945 /* camera_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B093B591561635500DEB945 /* camera_btn.png */; };
+		9B093B5F1561635500DEB945 /* camera_btn_bck.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B093B5A1561635500DEB945 /* camera_btn_bck.png */; };
+		9B093B601561635500DEB945 /* camera_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B093B5C1561635500DEB945 /* camera_btn@2x.png */; };
+		9B093B611561635500DEB945 /* camera_btn_bck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B093B5D1561635500DEB945 /* camera_btn_bck@2x.png */; };
+		9B5A3B8C1561650A00DF5FAE /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B5A3B8B1561650A00DF5FAE /* MainWindow.xib */; };
+		9B5A3B8E1561661100DF5FAE /* MMCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B093B521561633F00DEB945 /* MMCAppDelegate.m */; };
+		9B5A3B8F1561661500DF5FAE /* MMCCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B093B541561633F00DEB945 /* MMCCameraViewController.m */; };
+		9B5A3B911561663000DF5FAE /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B5A3B901561663000DF5FAE /* AssetsLibrary.framework */; };
+		9B5A3B961561667400DF5FAE /* MMCCameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B093B551561633F00DEB945 /* MMCCameraViewController.xib */; };
+		9B5A3B9A1561676300DF5FAE /* MMCTransactionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5A3B981561676300DF5FAE /* MMCTransactionsViewController.m */; };
+		9B5A3B9B1561676300DF5FAE /* MMCTransactionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B5A3B991561676300DF5FAE /* MMCTransactionsViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9B093B361561630C00DEB945 /* MapMyCost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapMyCost.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B093B3A1561630C00DEB945 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9B093B3C1561630C00DEB945 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9B093B3E1561630C00DEB945 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9B093B421561630C00DEB945 /* MapMyCost-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MapMyCost-Info.plist"; sourceTree = "<group>"; };
+		9B093B441561630C00DEB945 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9B093B461561630C00DEB945 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9B093B481561630C00DEB945 /* MapMyCost-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MapMyCost-Prefix.pch"; sourceTree = "<group>"; };
+		9B093B511561633F00DEB945 /* MMCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMCAppDelegate.h; sourceTree = "<group>"; };
+		9B093B521561633F00DEB945 /* MMCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMCAppDelegate.m; sourceTree = "<group>"; };
+		9B093B531561633F00DEB945 /* MMCCameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMCCameraViewController.h; sourceTree = "<group>"; };
+		9B093B541561633F00DEB945 /* MMCCameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMCCameraViewController.m; sourceTree = "<group>"; };
+		9B093B551561633F00DEB945 /* MMCCameraViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MMCCameraViewController.xib; sourceTree = "<group>"; };
+		9B093B591561635500DEB945 /* camera_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_btn.png; sourceTree = "<group>"; };
+		9B093B5A1561635500DEB945 /* camera_btn_bck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_btn_bck.png; sourceTree = "<group>"; };
+		9B093B5C1561635500DEB945 /* camera_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera_btn@2x.png"; sourceTree = "<group>"; };
+		9B093B5D1561635500DEB945 /* camera_btn_bck@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera_btn_bck@2x.png"; sourceTree = "<group>"; };
+		9B5A3B8B1561650A00DF5FAE /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		9B5A3B901561663000DF5FAE /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		9B5A3B971561676300DF5FAE /* MMCTransactionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMCTransactionsViewController.h; sourceTree = "<group>"; };
+		9B5A3B981561676300DF5FAE /* MMCTransactionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCTransactionsViewController.m; sourceTree = "<group>"; };
+		9B5A3B991561676300DF5FAE /* MMCTransactionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMCTransactionsViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9B093B331561630C00DEB945 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B5A3B911561663000DF5FAE /* AssetsLibrary.framework in Frameworks */,
+				9B093B3B1561630C00DEB945 /* UIKit.framework in Frameworks */,
+				9B093B3D1561630C00DEB945 /* Foundation.framework in Frameworks */,
+				9B093B3F1561630C00DEB945 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9B093B2B1561630C00DEB945 = {
+			isa = PBXGroup;
+			children = (
+				9B093B401561630C00DEB945 /* MapMyCost */,
+				9B093B391561630C00DEB945 /* Frameworks */,
+				9B093B371561630C00DEB945 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9B093B371561630C00DEB945 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9B093B361561630C00DEB945 /* MapMyCost.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9B093B391561630C00DEB945 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B5A3B901561663000DF5FAE /* AssetsLibrary.framework */,
+				9B093B3A1561630C00DEB945 /* UIKit.framework */,
+				9B093B3C1561630C00DEB945 /* Foundation.framework */,
+				9B093B3E1561630C00DEB945 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9B093B401561630C00DEB945 /* MapMyCost */ = {
+			isa = PBXGroup;
+			children = (
+				9B093B511561633F00DEB945 /* MMCAppDelegate.h */,
+				9B093B521561633F00DEB945 /* MMCAppDelegate.m */,
+				9B5A3B8B1561650A00DF5FAE /* MainWindow.xib */,
+				9B093B531561633F00DEB945 /* MMCCameraViewController.h */,
+				9B093B541561633F00DEB945 /* MMCCameraViewController.m */,
+				9B093B551561633F00DEB945 /* MMCCameraViewController.xib */,
+				9B5A3B971561676300DF5FAE /* MMCTransactionsViewController.h */,
+				9B5A3B981561676300DF5FAE /* MMCTransactionsViewController.m */,
+				9B5A3B991561676300DF5FAE /* MMCTransactionsViewController.xib */,
+				9B093B411561630C00DEB945 /* Supporting Files */,
+			);
+			path = MapMyCost;
+			sourceTree = "<group>";
+		};
+		9B093B411561630C00DEB945 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9B093B571561634800DEB945 /* Resources */,
+				9B093B421561630C00DEB945 /* MapMyCost-Info.plist */,
+				9B093B431561630C00DEB945 /* InfoPlist.strings */,
+				9B093B461561630C00DEB945 /* main.m */,
+				9B093B481561630C00DEB945 /* MapMyCost-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9B093B571561634800DEB945 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9B093B581561635500DEB945 /* Images */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		9B093B581561635500DEB945 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				9B093B591561635500DEB945 /* camera_btn.png */,
+				9B093B5A1561635500DEB945 /* camera_btn_bck.png */,
+				9B093B5B1561635500DEB945 /* Retina */,
+			);
+			name = Images;
+			path = Resources/Images;
+			sourceTree = "<group>";
+		};
+		9B093B5B1561635500DEB945 /* Retina */ = {
+			isa = PBXGroup;
+			children = (
+				9B093B5C1561635500DEB945 /* camera_btn@2x.png */,
+				9B093B5D1561635500DEB945 /* camera_btn_bck@2x.png */,
+			);
+			path = Retina;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9B093B351561630C00DEB945 /* MapMyCost */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B093B4E1561630C00DEB945 /* Build configuration list for PBXNativeTarget "MapMyCost" */;
+			buildPhases = (
+				9B093B321561630C00DEB945 /* Sources */,
+				9B093B331561630C00DEB945 /* Frameworks */,
+				9B093B341561630C00DEB945 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MapMyCost;
+			productName = MapMyCost;
+			productReference = 9B093B361561630C00DEB945 /* MapMyCost.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9B093B2D1561630C00DEB945 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = MMC;
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = Ekito;
+			};
+			buildConfigurationList = 9B093B301561630C00DEB945 /* Build configuration list for PBXProject "MapMyCost" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9B093B2B1561630C00DEB945;
+			productRefGroup = 9B093B371561630C00DEB945 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9B093B351561630C00DEB945 /* MapMyCost */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9B093B341561630C00DEB945 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B5A3B961561667400DF5FAE /* MMCCameraViewController.xib in Resources */,
+				9B093B451561630C00DEB945 /* InfoPlist.strings in Resources */,
+				9B093B5E1561635500DEB945 /* camera_btn.png in Resources */,
+				9B093B5F1561635500DEB945 /* camera_btn_bck.png in Resources */,
+				9B093B601561635500DEB945 /* camera_btn@2x.png in Resources */,
+				9B093B611561635500DEB945 /* camera_btn_bck@2x.png in Resources */,
+				9B5A3B8C1561650A00DF5FAE /* MainWindow.xib in Resources */,
+				9B5A3B9B1561676300DF5FAE /* MMCTransactionsViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9B093B321561630C00DEB945 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B5A3B8F1561661500DF5FAE /* MMCCameraViewController.m in Sources */,
+				9B5A3B8E1561661100DF5FAE /* MMCAppDelegate.m in Sources */,
+				9B093B471561630C00DEB945 /* main.m in Sources */,
+				9B5A3B9A1561676300DF5FAE /* MMCTransactionsViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9B093B431561630C00DEB945 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9B093B441561630C00DEB945 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9B093B4C1561630C00DEB945 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9B093B4D1561630C00DEB945 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9B093B4F1561630C00DEB945 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MapMyCost/MapMyCost-Prefix.pch";
+				INFOPLIST_FILE = "MapMyCost/MapMyCost-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9B093B501561630C00DEB945 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MapMyCost/MapMyCost-Prefix.pch";
+				INFOPLIST_FILE = "MapMyCost/MapMyCost-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9B093B301561630C00DEB945 /* Build configuration list for PBXProject "MapMyCost" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B093B4C1561630C00DEB945 /* Debug */,
+				9B093B4D1561630C00DEB945 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9B093B4E1561630C00DEB945 /* Build configuration list for PBXNativeTarget "MapMyCost" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B093B4F1561630C00DEB945 /* Debug */,
+				9B093B501561630C00DEB945 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9B093B2D1561630C00DEB945 /* Project object */;
+}
