@@ -7,12 +7,13 @@
 //
 
 #import "MMCAppDelegate.h"
-#import "MMCCameraViewController.h"
+#import "MMCTransactionsViewController.h"
+#import "MMCWSFacade.h"
+#import "MBProgressHUD.h"
 
 @implementation MMCAppDelegate
 
 @synthesize window = _window;
-@synthesize rootController;
 @synthesize pickerController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -21,6 +22,7 @@
     self.window.rootViewController = controller;
     
     pickerController = [[MMCCameraViewController alloc] initWithNibName:@"MMCCameraViewController" bundle:nil];
+    pickerController.delegate = self;
     [pickerController setupImagePickerController];
     if ([self.window.rootViewController respondsToSelector:@selector(presentViewController:animated:completion:)]) {
         [self.window.rootViewController presentViewController:pickerController.imagePickerController animated:YES completion:nil];
@@ -69,6 +71,33 @@
      Save data if appropriate.
      See also applicationDidEnterBackground:.
      */
+}
+
+#pragma mark - Private methods
+- (void)takePhoto
+{
+    UIViewController *controller = [[UIViewController alloc] init];
+    self.window.rootViewController = controller;
+    
+    if ([self.window.rootViewController respondsToSelector:@selector(presentViewController:animated:completion:)]) {
+        [self.window.rootViewController presentViewController:pickerController.imagePickerController animated:YES completion:nil];
+    } else {
+        [self.window.rootViewController presentModalViewController:pickerController.imagePickerController animated:YES];
+    }
+}
+
+#pragma mark - MMCCameraViewControllerDelegate methods
+- (void)getTransactions
+{
+    if ([self.window.rootViewController respondsToSelector:@selector(dismissViewControllerAnimated:completion:)]) {
+        [self.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
+    } else {
+        [self.window.rootViewController dismissModalViewControllerAnimated:YES];
+    }
+    
+    MMCTransactionsViewController *viewController = [[MMCTransactionsViewController alloc] initWithNibName:@"MMCTransactionsViewController" bundle:nil];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    self.window.rootViewController = navigationController;
 }
 
 @end

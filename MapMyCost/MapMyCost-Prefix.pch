@@ -11,4 +11,7 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+    #import "MMCWSFacade.h"
 #endif
+
+#define BASE_URL @"http://mapmycost.herokuapp.com"

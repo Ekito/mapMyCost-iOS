@@ -8,10 +8,12 @@
 
 #import "MMCCameraViewController.h"
 #import <AssetsLibrary/AssetsLibrary.h>
+#import "MBProgressHUD.h"
 
 @implementation MMCCameraViewController
 
 @synthesize imagePickerController;
+@synthesize delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -73,17 +75,25 @@
     [imagePickerController takePicture];
 }
 
+- (IBAction)transactions:(id)sender
+{
+    [self.delegate getTransactions];
+}
+
 #pragma mark - UIImagePickerControllerDelegate
 
 - (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
     ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];  
     // Request to save the image to camera roll  
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:imagePickerController.view animated:YES];
+    hud.labelText = @"Saving photo ...";
     [library writeImageToSavedPhotosAlbum:[image CGImage] orientation:(ALAssetOrientation)[image imageOrientation] completionBlock:^(NSURL *assetURL, NSError *error){  
         if (error) {  
             NSLog(@"error");  
         } else {  
-            NSLog(@"url %@", assetURL);  
+            NSLog(@"url %@", assetURL);
+            [MBProgressHUD hideHUDForView:imagePickerController.view animated:YES];
         }  
     }];  
 }

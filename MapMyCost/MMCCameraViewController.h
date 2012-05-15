@@ -8,13 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol MMCCameraViewControllerDelegate;
+
 @interface MMCCameraViewController : UIViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
     UIImagePickerController *imagePickerController;
 }
 
-@property (nonatomic, retain) UIImagePickerController *imagePickerController;
+@property (strong, nonatomic) UIImagePickerController *imagePickerController;
+@property (nonatomic, unsafe_unretained) id<MMCCameraViewControllerDelegate> delegate;
 
 - (void)setupImagePickerController;
 - (IBAction)takePhoto:(id)sender;
+- (IBAction)transactions:(id)sender;
 
+@end
+
+@protocol MMCCameraViewControllerDelegate <NSObject>
+- (void)getTransactions;
 @end

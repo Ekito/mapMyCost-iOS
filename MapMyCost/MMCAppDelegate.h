@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MMCCameraViewController.h"
 
-@class MMCCameraViewController;
-
-@interface MMCAppDelegate : NSObject <UIApplicationDelegate>
+@interface MMCAppDelegate : NSObject <UIApplicationDelegate, MMCCameraViewControllerDelegate>
 
 @property (nonatomic, retain) IBOutlet UIWindow                             *window;
-@property (nonatomic, retain) UIViewController                              *rootController;
 @property (nonatomic, retain) MMCCameraViewController                       *pickerController;
+
+- (void)takePhoto;
 
 @end
