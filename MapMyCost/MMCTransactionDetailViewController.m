@@ -35,6 +35,7 @@
         if (_transaction) {
             transaction = _transaction;
             
+            // Update view with transaction details
             self.titleLabel.text = [_transaction objectForKey:@"title"];
             
             NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -54,7 +55,15 @@
                 self.imageView.hidden = NO;
                 
                 NSString *imageURLString = [NSString stringWithFormat:@"%@%@", BASE_URL, [_transaction objectForKey:@"picture"]];
-                [self.imageView setImageWithURL:[NSURL URLWithString:imageURLString]];
+                [self.imageView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:imageURLString]] 
+                                      placeholderImage:[UIImage imageNamed:@"placeholder.png"] 
+                                               success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+                                                   NSLog(@"success");
+                                               }
+                                               failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+                                                   NSLog(@"error %@", error.description);
+                                                   self.imageView.hidden = YES;
+                                               }];
             } else {
                 self.choosePhotoButton.hidden = NO;
                 self.imageView.hidden = YES;
@@ -63,7 +72,7 @@
             // MapView
             if ([[_transaction objectForKey:@"latitude"] doubleValue] != 0.0 && [[_transaction objectForKey:@"longitude"] doubleValue] != 0.0) {
                 self.mapView.hidden = NO;
-
+                
                 MMCAnnotation *annotation = [[MMCAnnotation alloc] initWithData:_transaction];
                 
                 MKCoordinateRegion region;
@@ -93,7 +102,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.title = @"Detail";
+    // Navigation bar
+    self.title = @"Details";
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"take_photo.png"] style:UIBarButtonItemStylePlain target:self action:@selector(photoAction)];
+    self.navigationItem.rightBarButtonItem = button;
     
     [self load:nil];
 }
@@ -113,6 +126,7 @@
 #pragma mark - Action methods
 - (IBAction)choosePhoto:(id)sender
 {
+    // Pick a photo to map with transaction
     MMCImagePickerViewController *imagePicker = [[MMCImagePickerViewController alloc] initWithData:transaction];
     imagePicker.delegate = self;
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:imagePicker];
@@ -122,6 +136,7 @@
 #pragma mark - MMCImagePickerViewControllerDelegate
 - (void)sendPhotoCallback
 {
+    // Reload content view after photo upload
     [self load:nil];
 }
 

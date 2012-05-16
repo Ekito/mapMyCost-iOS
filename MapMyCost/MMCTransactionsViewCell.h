@@ -10,9 +10,9 @@
 
 @interface MMCTransactionsViewCell : UITableViewCell
 
-@property (strong, nonatomic) IBOutlet UIView   *bgView;
-@property (strong, nonatomic) IBOutlet UILabel  *title;
-@property (strong, nonatomic) IBOutlet UILabel  *date;
-@property (strong, nonatomic) IBOutlet UILabel  *amount;
+@property (strong, nonatomic) IBOutlet UIImageView  *bgView;
+@property (strong, nonatomic) IBOutlet UILabel      *title;
+@property (strong, nonatomic) IBOutlet UILabel      *date;
+@property (strong, nonatomic) IBOutlet UILabel      *amount;
 
 @end

@@ -49,6 +49,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // Navigation bar
+    self.title = @"Gallery";
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(cancel)];
+    self.navigationItem.leftBarButtonItem = button;
         
     assets = [[NSMutableArray alloc] init];  
     
@@ -62,10 +68,12 @@
     NSDate *transactionDateWithNoTime = [self dateWithNoTime:transactionDate];
     NSLog(@"transactionDateWithNoTime %@", [transactionDateWithNoTime description]);
     
-    [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+    hud.labelText = @"Loading photos";
     
     ALAssetsGroupEnumerationResultsBlock assetEnumerator = ^(ALAsset *result, NSUInteger index, BOOL *stop) {
         if(result != NULL) {
+            // Show only photos taken on the same date as the transaction
             if ([[result valueForProperty:ALAssetPropertyType] isEqualToString:ALAssetTypePhoto]) {
                 NSDate *photoDateWithNoTime = [self dateWithNoTime:[result valueForProperty:ALAssetPropertyDate]];
                 if ([transactionDateWithNoTime compare:photoDateWithNoTime] == NSOrderedSame) {
@@ -125,17 +133,11 @@
     
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:identifier];
     
-    
-    
     if (cell == nil) {
-        
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-        
     }
         
-    ALAssetRepresentation *representation = [[assets objectAtIndex:indexPath.row] defaultRepresentation];
-    NSURL *url = [representation url];
-    
+    ALAssetRepresentation *representation = [[assets objectAtIndex:indexPath.row] defaultRepresentation];    
     [[cell imageView] setImage:[UIImage imageWithCGImage:[representation fullResolutionImage]]];
     [[cell textLabel] setText:[NSString stringWithFormat:@"Photo %d", indexPath.row+1]];
     
@@ -152,10 +154,8 @@
     
     CLLocation* location = [asset valueForProperty:ALAssetPropertyLocation];
     CLLocationCoordinate2D coord = [location coordinate];
-    NSLog(@"%@ %f %f", location, coord.latitude, coord.longitude);
     
     NSDictionary *parameters = [[NSDictionary alloc] initWithObjectsAndKeys:[transaction objectForKey:@"id"], @"id", [NSNumber numberWithFloat:coord.latitude], @"latitude", [NSNumber numberWithFloat:coord.longitude], @"longitude", nil];
-    NSLog(@"parameters %@", parameters);
     
     ALAssetRepresentation *representation = [asset defaultRepresentation];
     NSData *imageData = UIImageJPEGRepresentation([UIImage imageWithCGImage:[representation fullResolutionImage]], 0.5);
@@ -175,6 +175,11 @@
                                      }];
     [operation start];
     
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+- (void)cancel
+{
     [self dismissModalViewControllerAnimated:YES];
 }
 

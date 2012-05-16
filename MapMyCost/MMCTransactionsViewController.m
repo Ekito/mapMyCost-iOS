@@ -11,6 +11,7 @@
 #import "MMCTransactionDetailViewController.h"
 #import "MBProgressHUD.h"
 #import "MMCAppDelegate.h"
+#import "SVPullToRefresh.h"
 
 @implementation MMCTransactionsViewController
 
@@ -36,6 +37,7 @@
         }
         
         [MBProgressHUD hideHUDForView:self.navigationController.view animated:YES];
+        tableView.pullToRefreshView.lastUpdatedDate = [NSDate date];
     }];
 }
 
@@ -44,16 +46,28 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    // Navigation bar
     self.title = @"Transactions";
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"take_photo.png"] style:UIBarButtonItemStylePlain target:self action:@selector(photoAction)];
+    self.navigationItem.rightBarButtonItem = button;
     
-    // Bouton photo
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setImage:[UIImage imageNamed:@"button_arrow.png"] forState:UIControlStateNormal];
-    button.frame=CGRectMake(0.0, 50.0, 35.0, 30.0);
-    [button addTarget:self action:@selector(photoAction) forControlEvents:UIControlEventTouchUpInside];
-    
-    // Placement du bouton dans la barre de navigation
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    // Add pullToRefresh to tableView
+    [tableView addPullToRefreshWithActionHandler:^{
+        [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+        
+        [[MMCWSFacade sharedMMCWSFacade] getTransactionsWithBlock:^(NSArray *_transactions) {
+            if (_transactions) {
+                self.transactions = _transactions;
+                [self.tableView reloadData];
+            }
+            
+            [MBProgressHUD hideHUDForView:self.navigationController.view animated:YES];
+            tableView.pullToRefreshView.lastUpdatedDate = [NSDate date];
+        }];
+        
+        [tableView.pullToRefreshView stopAnimating];
+    }];
     
     [self reload:nil];
 }
@@ -101,12 +115,17 @@
     [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
     [dateFormatter setDateFormat:@"dd/MM/yyyy"];
     
+    // Timestamp in milliseconds
     NSDate *date = [[NSDate alloc] initWithTimeIntervalSince1970:([[transaction objectForKey:@"date"] doubleValue] / 1000.0)];
     cell.date.text = [dateFormatter stringFromDate:date];
     
     cell.amount.text = [NSString stringWithFormat:@"%@ €", [transaction objectForKey:@"amount"]];
     
-    cell.bgView.backgroundColor = [[transaction objectForKey:@"mapped"] boolValue] ? [UIColor whiteColor] : [UIColor colorWithRed:0.298 green:0.718 blue:0.851 alpha:1.000];
+    cell.bgView.image = [[transaction objectForKey:@"mapped"] boolValue] ? nil : [UIImage imageNamed:@"highlighted.png"];
+    
+    UIView *selectedBackgroundView = [[UIView alloc] initWithFrame:cell.frame];
+    selectedBackgroundView.backgroundColor = [UIColor colorWithRed:0.429 green:0.750 blue:0.963 alpha:1.0];
+    cell.selectedBackgroundView = selectedBackgroundView;
     
     return cell;
 }
@@ -114,6 +133,7 @@
 #pragma mark - UITableViewDelegate methods
 - (void)tableView:(UITableView *)_tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    // Transaction details
     MMCTransactionDetailViewController *nextViewController = [[MMCTransactionDetailViewController alloc] initWithTransactionId:[[transactions objectAtIndex:indexPath.row] objectForKey:@"id"]];
     [self.navigationController pushViewController:nextViewController animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
