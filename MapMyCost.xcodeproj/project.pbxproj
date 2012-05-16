@@ -60,6 +60,7 @@
 		9BCDA9B515624A2600981226 /* MMCWSFacade.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCDA9B415624A2600981226 /* MMCWSFacade.m */; };
 		9BE4F7E515629D0C0084660B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE4F7E415629D0C0084660B /* QuartzCore.framework */; };
 		9BE4F7EB1562A3A20084660B /* MMCImagePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BE4F7EA1562A3A20084660B /* MMCImagePickerViewController.xib */; };
+		9BF7E1A31563EA69007B0692 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF7E1A21563EA69007B0692 /* JSONKit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -140,6 +141,8 @@
 		9BCDA9B415624A2600981226 /* MMCWSFacade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCWSFacade.m; sourceTree = "<group>"; };
 		9BE4F7E415629D0C0084660B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9BE4F7EA1562A3A20084660B /* MMCImagePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMCImagePickerViewController.xib; sourceTree = "<group>"; };
+		9BF7E1A11563EA69007B0692 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		9BF7E1A21563EA69007B0692 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -329,10 +332,21 @@
 			children = (
 				9B920F941563A9F60021E2B6 /* SVPullToRefresh */,
 				9B48CB221562562D002B32E9 /* MBProgressHUD */,
+				9BF7E1A01563EA69007B0692 /* JSONKit */,
 				9B48CAF215624EF0002B32E9 /* AFNetworking */,
 			);
 			name = External;
 			path = MapMyCost;
+			sourceTree = "<group>";
+		};
+		9BF7E1A01563EA69007B0692 /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				9BF7E1A11563EA69007B0692 /* JSONKit.h */,
+				9BF7E1A21563EA69007B0692 /* JSONKit.m */,
+			);
+			name = JSONKit;
+			path = ../JSONKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -443,6 +457,7 @@
 				9B43EDA71562894A00FBDF38 /* MMCAnnotation.m in Sources */,
 				9B43EDDF156293B200FBDF38 /* MMCImagePickerViewController.m in Sources */,
 				9B920F991563A9F60021E2B6 /* SVPullToRefresh.m in Sources */,
+				9BF7E1A31563EA69007B0692 /* JSONKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
