@@ -62,6 +62,10 @@
 		9BE4F7EB1562A3A20084660B /* MMCImagePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BE4F7EA1562A3A20084660B /* MMCImagePickerViewController.xib */; };
 		9BF7E1A31563EA69007B0692 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF7E1A21563EA69007B0692 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9BF7E1AD1563EB95007B0692 /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = 9BF7E1AC1563EB95007B0692 /* README.markdown */; };
+		9BF7E1B91563EE8D007B0692 /* heatMap@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BF7E1B81563EE8D007B0692 /* heatMap@2x.png */; };
+		9BF7E1BB1563EE99007B0692 /* heatMap.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BF7E1BA1563EE99007B0692 /* heatMap.png */; };
+		9BF7E1BF1563F063007B0692 /* MMCHeatMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF7E1BD1563F063007B0692 /* MMCHeatMapViewController.m */; };
+		9BF7E1C01563F063007B0692 /* MMCHeatMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BF7E1BE1563F063007B0692 /* MMCHeatMapViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -145,6 +149,11 @@
 		9BF7E1A11563EA69007B0692 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		9BF7E1A21563EA69007B0692 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		9BF7E1AC1563EB95007B0692 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
+		9BF7E1B81563EE8D007B0692 /* heatMap@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heatMap@2x.png"; sourceTree = "<group>"; };
+		9BF7E1BA1563EE99007B0692 /* heatMap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heatMap.png; sourceTree = "<group>"; };
+		9BF7E1BC1563F063007B0692 /* MMCHeatMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMCHeatMapViewController.h; sourceTree = "<group>"; };
+		9BF7E1BD1563F063007B0692 /* MMCHeatMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCHeatMapViewController.m; sourceTree = "<group>"; };
+		9BF7E1BE1563F063007B0692 /* MMCHeatMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMCHeatMapViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +232,9 @@
 				9B43EDDD156293B100FBDF38 /* MMCImagePickerViewController.h */,
 				9B43EDDE156293B100FBDF38 /* MMCImagePickerViewController.m */,
 				9BE4F7EA1562A3A20084660B /* MMCImagePickerViewController.xib */,
+				9BF7E1BC1563F063007B0692 /* MMCHeatMapViewController.h */,
+				9BF7E1BD1563F063007B0692 /* MMCHeatMapViewController.m */,
+				9BF7E1BE1563F063007B0692 /* MMCHeatMapViewController.xib */,
 				9B093B411561630C00DEB945 /* Supporting Files */,
 			);
 			path = MapMyCost;
@@ -255,6 +267,7 @@
 		9B093B581561635500DEB945 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9BF7E1BA1563EE99007B0692 /* heatMap.png */,
 				9B920FA81563B4990021E2B6 /* highlighted.png */,
 				9B093B591561635500DEB945 /* camera_btn.png */,
 				9B093B5A1561635500DEB945 /* camera_btn_bck.png */,
@@ -271,6 +284,7 @@
 		9B093B5B1561635500DEB945 /* Retina */ = {
 			isa = PBXGroup;
 			children = (
+				9BF7E1B81563EE8D007B0692 /* heatMap@2x.png */,
 				9B5A3BA115616E5A00DF5FAE /* button_arrow@2x.png */,
 				9B093B5C1561635500DEB945 /* camera_btn@2x.png */,
 				9B093B5D1561635500DEB945 /* camera_btn_bck@2x.png */,
@@ -430,6 +444,9 @@
 				9B920FB91563D6310021E2B6 /* button_menu.png in Resources */,
 				9B920FBB1563D63A0021E2B6 /* button_menu@2x.png in Resources */,
 				9BF7E1AD1563EB95007B0692 /* README.markdown in Resources */,
+				9BF7E1B91563EE8D007B0692 /* heatMap@2x.png in Resources */,
+				9BF7E1BB1563EE99007B0692 /* heatMap.png in Resources */,
+				9BF7E1C01563F063007B0692 /* MMCHeatMapViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +479,7 @@
 				9B43EDDF156293B200FBDF38 /* MMCImagePickerViewController.m in Sources */,
 				9B920F991563A9F60021E2B6 /* SVPullToRefresh.m in Sources */,
 				9BF7E1A31563EA69007B0692 /* JSONKit.m in Sources */,
+				9BF7E1BF1563F063007B0692 /* MMCHeatMapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,8 @@
 #import "MBProgressHUD.h"
 #import "UIImageView+AFNetworking.h"
 #import "MMCAnnotation.h"
+#import "MMCAppDelegate.h"
+#import "MMCHeatMapViewController.h"
 
 @implementation MMCTransactionDetailViewController
 
@@ -105,8 +107,25 @@
     // Navigation bar
     self.title = @"Details";
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
-    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"take_photo.png"] style:UIBarButtonItemStylePlain target:self action:@selector(photoAction)];
-    self.navigationItem.rightBarButtonItem = button;
+    
+    UIToolbar* toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 110, 44.01)];
+    toolbar.tintColor = [UIColor blackColor];
+    toolbar.opaque = NO;
+    toolbar.backgroundColor = [UIColor clearColor];
+    toolbar.clearsContextBeforeDrawing = YES;  
+    
+    // Array stockant les boutons
+    NSMutableArray* buttons = [[NSMutableArray alloc] initWithCapacity:3];
+    
+    UIBarButtonItem *heatMapButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"heatMap.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(heatMapAction)];
+    [buttons addObject:heatMapButton];
+    UIBarButtonItem *spacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    [buttons addObject:spacer];
+    UIBarButtonItem *photoButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"take_photo.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(photoAction)];
+    [buttons addObject:photoButton];
+    
+    [toolbar setItems:buttons animated:NO];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:toolbar];
     
     [self load:nil];
 }
@@ -124,6 +143,18 @@
 }
 
 #pragma mark - Action methods
+- (void)photoAction
+{
+    [(MMCAppDelegate *)[[UIApplication sharedApplication] delegate] takePhoto];
+}
+
+- (void)heatMapAction
+{
+    MMCHeatMapViewController *heapMapViewController = [[MMCHeatMapViewController alloc] initWithNibName:@"MMCHeatMapViewController" bundle:nil];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:heapMapViewController];
+    [self presentModalViewController:navController animated:YES];
+}
+
 - (IBAction)choosePhoto:(id)sender
 {
     // Pick a photo to map with transaction
