@@ -60,7 +60,8 @@
 		9BCDA9B515624A2600981226 /* MMCWSFacade.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCDA9B415624A2600981226 /* MMCWSFacade.m */; };
 		9BE4F7E515629D0C0084660B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE4F7E415629D0C0084660B /* QuartzCore.framework */; };
 		9BE4F7EB1562A3A20084660B /* MMCImagePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BE4F7EA1562A3A20084660B /* MMCImagePickerViewController.xib */; };
-		9BF7E1A31563EA69007B0692 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF7E1A21563EA69007B0692 /* JSONKit.m */; };
+		9BF7E1A31563EA69007B0692 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF7E1A21563EA69007B0692 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9BF7E1AD1563EB95007B0692 /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = 9BF7E1AC1563EB95007B0692 /* README.markdown */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -143,6 +144,7 @@
 		9BE4F7EA1562A3A20084660B /* MMCImagePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMCImagePickerViewController.xib; sourceTree = "<group>"; };
 		9BF7E1A11563EA69007B0692 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		9BF7E1A21563EA69007B0692 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		9BF7E1AC1563EB95007B0692 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 		9B093B2B1561630C00DEB945 = {
 			isa = PBXGroup;
 			children = (
+				9BF7E1AC1563EB95007B0692 /* README.markdown */,
 				9B093B401561630C00DEB945 /* MapMyCost */,
 				9BE4F7B9156294FE0084660B /* External */,
 				9B093B391561630C00DEB945 /* Frameworks */,
@@ -426,6 +429,7 @@
 				9B920FB71563D5AC0021E2B6 /* placeholder@2x.png in Resources */,
 				9B920FB91563D6310021E2B6 /* button_menu.png in Resources */,
 				9B920FBB1563D63A0021E2B6 /* button_menu@2x.png in Resources */,
+				9BF7E1AD1563EB95007B0692 /* README.markdown in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
